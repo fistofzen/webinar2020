@@ -1,0 +1,18 @@
+@server = http://localhost:4004
+@me = Authorization: Basic {{$processEnv USER}}:
+
+### ------------------------------------------------------------------------
+# Get service info
+GET {{server}}/MasterdataService/Currencies
+{{me}}
+ 
+
+### ------------------------------------------------------------------------
+# Submit Order as authenticated user
+# (send that three times to get out-of-stock message)
+POST {{server}}/MasterdataService/Employees1
+Content-Type: application/json
+{{me}}
+
+{ "nameFirst":"201", "nameMiddle":"E" , "nameLast":"DOLLAR" , "nameInitials" : "Test" }
+

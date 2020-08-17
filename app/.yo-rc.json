@@ -1,0 +1,17 @@
+{
+  "@sapui5/generator-sapui5-templates": {
+    "promptValues": {
+      "ApplicationTitle": "Adresses",
+      "ApplicationDescription": "Adresses",
+      "FLP": true,
+      "ServiceBaseUri": "https://localhost:4004/test1",
+      "DatasourceUrl": "/test1",
+      "ObjectCollection": "Adresses",
+      "ObjectCollection_Key": "ID",
+      "Object_Identifier": "city",
+      "Object_Number": "",
+      "Object_UnitOfMeasure": "",
+      "GroupId": "$auto"
+    }
+  }
+}

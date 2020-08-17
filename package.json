@@ -1,0 +1,54 @@
+{
+    "name": "hellocap",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^3",
+        "express": "^4",
+        "@sap/hana-client": "^2.4.177"
+    },
+    "scripts": {
+        "start": "npm cds run",
+        "env"  : "cp ./default-env.json ./db/default-env.json && cp ./default-env.json ./srv/default-env.json",
+        "build" : "cds build/all --clean",
+        "dbbuild": "cds build && cd ./db && npm start"
+    },
+    "cds": {
+        "build": {
+            "target": ".",
+            "tasks": [
+                {
+                    "src": "db",
+                    "for": "hana",
+                    "options": {
+                        "model": [
+                            "db",
+                            "srv"
+                        ]
+                    }
+                },
+                {
+                    "src": "srv",
+                    "for": "node-cf",
+                    "options": {
+                        "model": [
+                            "db",
+                            "srv"
+                        ]
+                    }
+                }
+            ]
+        },
+        "hana": {
+            "deploy-format": "hdbtable"
+        },
+        "requires": {
+            "db": {
+                "kind": "hana"
+            }
+        }
+    }
+}
