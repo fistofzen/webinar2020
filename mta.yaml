@@ -1,9 +1,9 @@
 ## Generated mta.yaml based on template version 0.2.0
-## appName = hellocap
+## appName = webinar2020
 ## language=nodejs; multiTenant=false
 ## approuter=
 _schema-version: '3.1'
-ID: hellocap
+ID: webinar2020
 version: 1.0.0
 description: "A simple CAP project."
 parameters:
@@ -19,7 +19,7 @@ build-parameters:
 
 modules:
  # --------------------- SERVER MODULE ------------------------
- - name: hellocap-srv
+ - name: webinar2020-srv
  # ------------------------------------------------------------
    type: nodejs
    path: srv
@@ -27,7 +27,7 @@ modules:
      EXIT: 1  # required by deploy.js task to terminate 
    requires:
     # Resources extracted from CAP configuration
-    - name: hellocap-db
+    - name: webinar2020-db
    provides:
     - name: srv-binding      # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -39,17 +39,17 @@ modules:
    type: hdb
    path: db  
    parameters:
-     app-name: hellocap-db  
+     app-name: webinar2020-db  
    requires:
     # 'hana' and 'xsuaa' resources extracted from CAP configuration
-    - name: hellocap-db
+    - name: webinar2020-db
 
 
 resources:
  # services extracted from CAP configuration
  # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
 # ------------------------------------------------------------
- - name: hellocap-db
+ - name: webinar2020-db
 # ------------------------------------------------------------
    type: com.sap.xs.hdi-container
    parameters:

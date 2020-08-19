@@ -9,10 +9,10 @@ GET {{server}}/MasterdataService/Currencies
 
 ### ------------------------------------------------------------------------
 # Submit Order as authenticated user
-# (send that three times to get out-of-stock message)
+# (send that to insert Employee)
 POST {{server}}/MasterdataService/Employees1
 Content-Type: application/json
 {{me}}
 
-{ "nameFirst":"201", "nameMiddle":"E" , "nameLast":"DOLLAR" , "nameInitials" : "Test" }
+{ "nameFirst":"Veli", "nameMiddle":"Demir" , "nameLast":"Huseyin" , "nameInitials" : "Test" }
 
