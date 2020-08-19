@@ -7,7 +7,7 @@ cuid
 } from '@sap/cds/common';
 using { webinar.common } from './common';
 
-namespace  opensap.MD;
+namespace  webinar2020.MasterData;
 
 entity Addresses : cuid, temporal {
     city        : String(40);
@@ -20,6 +20,7 @@ entity Addresses : cuid, temporal {
     latitude    : Double;
     longitude   : Double;
 }
+
 annotate Addresses with  {
     ID          @title : '{i18n>addressId}';
     city        @title : '{i18n>city}';
@@ -81,7 +82,7 @@ define view TurkishEmployees as
     where
         'Turkey' = address.city;
 
-define view employeeStatus as
+define view EmployeeStatus as
     select from Employees as emp {
             @UI.lineItem       : [{importance : Importance.High}]
             @UI.fieldGroup     : [{position : 10}]

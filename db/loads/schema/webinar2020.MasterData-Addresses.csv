@@ -1,0 +1,3 @@
+ID,city,postalCode,street,building,country_code,region,addressType,validFrom,validTo,latitude,longitude
+02BD2137-0890-1EEA-A6C2-BB55C18DE7FB,Trabzon,60002,Yalı Mah.,54,TR,TR,1,2000-01-01,9999-12-31,39.716763,41.002697
+02BD2137-0890-1EEA-A6C2-BB55C18E07FB,Rize,94101,Yalı Mah.,6,TR,TR,1,2000-01-01,9999-12-31,39.716763,41.002697

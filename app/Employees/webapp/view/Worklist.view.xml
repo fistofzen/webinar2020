@@ -45,10 +45,13 @@
 
 				<columns>
 					<Column id="nameColumn">
-						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTit2le"/>
+						<Text text="{i18n>tableNameFirstName}" id="firstName"/>
 					</Column>
-                    		<Column id="name2Column">
-						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
+                    <Column id="nameColumn2">
+						<Text text="{i18n>tableNameLastName}" id="lastName"/>
+					</Column>
+                    <Column id="nameColumn3">
+						<Text text="{i18n>tableNamePartnerRole}" id="partnerRole"/>
 					</Column>
 				</columns>
 
@@ -59,7 +62,9 @@
 						<cells>
 							<ObjectIdentifier
 								title="{nameFirst}"/>
-                                	<ObjectIdentifier
+                            <ObjectIdentifier
+								title="{nameLast}"/>
+                            <ObjectIdentifier
 								title="{partnerRole}"/>
 						</cells>
 					</ColumnListItem>
