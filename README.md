@@ -24,4 +24,4 @@ File / Folder | Purpose
 
 Learn more at https://cap.cloud.sap/docs/get-started/
 
-any questions : huseyin.demirkale@sap.com
+Any questions : huseyin.demirkale@sap.com
