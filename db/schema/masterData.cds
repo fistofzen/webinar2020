@@ -7,33 +7,7 @@ cuid
 } from '@sap/cds/common';
 using { webinar.common } from './common';
 
-namespace  webinar2020.MasterData;
-
-entity Addresses : cuid, temporal {
-    city        : String(40);
-    postalCode  : String(10);
-    street      : String(60);
-    building    : String(10);
-    country     : Association to one sap.common.Countries;
-    region      : String(4);
-    addressType : String(2);
-    latitude    : Double;
-    longitude   : Double;
-}
-
-annotate Addresses with  {
-    ID          @title : '{i18n>addressId}';
-    city        @title : '{i18n>city}';
-    postalCode  @title : '{i18n>postalCode}';
-    street      @title : '{i18n>street}';
-    building    @title : '{i18n>building}';
-    country     @title : '{i18n>country}';
-    region      @title : '{i18n>region}';
-    addressType @title : '{i18n>addressType}';
-    latitude    @title : '{i18n>latitude}';
-    longitude   @title : '{i18n>longitude}';
-};
-
+namespace  webinar2020.MasterData1; 
 entity Employees : cuid{
     nameFirst      : String(40);
     nameMiddle     : String(40);
@@ -45,7 +19,7 @@ entity Employees : cuid{
     email          : common.Email;
     loginName      : String(12);
     @cascade : {all}
-    address        : Composition of one Addresses;
+    address        : Composition of one Addresses1;
     currency       : Currency;
     salaryAmount   : Decimal(15, 2);
     accountNumber  : String(10);
@@ -71,16 +45,34 @@ annotate Employees with  {
     partnerRole    @title : '{i18n>partnerRole}';
 };
 
+entity Addresses1 : cuid{
+    city        : String(40);
+    postalCode  : String(10);
+    street      : String(60);
+    building    : String(10);
+    country     : Association to one sap.common.Countries;
+    region      : String(4);
+    addressType : String(2);
+    latitude    : Double;
+    longitude   : Double;
+}
 
-define view TurkishEmployees as
-    select from Employees as emp {
-        key nameFirst,
-        nameLast,
-        address.ID   as addid,
-        address.city as CITY
-    }
-    where
-        'Turkey' = address.city;
+annotate Addresses with  {
+    ID          @title : '{i18n>addressId}';
+    city        @title : '{i18n>city}';
+    postalCode  @title : '{i18n>postalCode}';
+    street      @title : '{i18n>street}';
+    building    @title : '{i18n>building}';
+    country     @title : '{i18n>country}';
+    region      @title : '{i18n>region}';
+    addressType @title : '{i18n>addressType}';
+    latitude    @title : '{i18n>latitude}';
+    longitude   @title : '{i18n>longitude}';
+};
+
+
+
+
 
 define view EmployeeStatus as
     select from Employees as emp {

@@ -6,14 +6,15 @@
     "license": "UNLICENSED",
     "private": true,
     "dependencies": {
-        "@sap/cds": "^3",
-        "express": "^4",
-        "@sap/hana-client": "^2.4.177"
+        "@sap/cds": "^3.34.3",
+        "@sap/cds-dk": "^2.0.8",
+        "@sap/hana-client": "^2.4.177",
+        "express": "^4"
     },
     "scripts": {
         "start": "npm cds run",
-        "env"  : "cp ./default-env.json ./db/default-env.json && cp ./default-env.json ./srv/default-env.json",
-        "build" : "cds build/all --clean",
+        "env": "cp ./default-env.json ./db/default-env.json && cp ./default-env.json ./srv/default-env.json",
+        "build": "cds build/all --clean",
         "dbbuild": "cds build && cd ./db && npm start"
     },
     "cds": {
@@ -41,6 +42,9 @@
                     }
                 }
             ]
+        },
+        "features": {
+            "snapi": true
         },
         "hana": {
             "deploy-format": "hdbtable"
